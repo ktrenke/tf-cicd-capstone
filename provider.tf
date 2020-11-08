@@ -7,14 +7,14 @@ terraform {
     }
 
     backend "s3" {
-        bucket = var.state_bucket
+        bucket = "fj-tf-state"
         key = "<project name>/terraform.state"
         region = "us-west-2"
     }
 }
 
 provider "aws" {
-    region = var.region
+    region = "us-west-2"
 }
 
 module "codecommit-cicd" {
