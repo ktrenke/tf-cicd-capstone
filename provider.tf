@@ -8,8 +8,8 @@ terraform {
 
     backend "s3" {
         bucket = var.state_bucket
-        key = "${var.project_name}/terraform.state"
-        region = var.region
+        key = "<project name>/terraform.state"
+        region = "us-west-2"
     }
 }
 
