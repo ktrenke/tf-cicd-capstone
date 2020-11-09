@@ -19,7 +19,7 @@ provider "aws" {
 
 module "codecommit-cicd" {
     source                 = "git::https://github.com/ssccio/terraform-aws-codecommit-cicd.git?ref=master"
-    repo_name                 = "hugo-cicd-fj-test-website"       # Required
+    repo_name                 = "hugo-fj-website"            # Required
     organization_name         = "fariasjett"                 # Required
     repo_default_branch       = "master"                     # Default value
     aws_region                = "us-west-2"                  # Default value
