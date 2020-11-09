@@ -8,7 +8,7 @@ terraform {
 
     backend "s3" {
         bucket = "fj-tf-state"
-        key = "<project name>/terraform.state"
+        key = "hugo-cicd-fj-website/terraform.state"
         region = "us-west-2"
     }
 }
@@ -19,8 +19,8 @@ provider "aws" {
 
 module "codecommit-cicd" {
     source                 = "git::https://github.com/ssccio/terraform-aws-codecommit-cicd.git?ref=master"
-    repo_name                 = "new-test-repo"              # Required
-    organization_name         = "sscc"                       # Required
+    repo_name                 = "hugo-cicd-fj-test-website"       # Required
+    organization_name         = "fariasjett"                 # Required
     repo_default_branch       = "master"                     # Default value
     aws_region                = "us-west-2"                  # Default value
     char_delimiter            = "-"                          # Default value

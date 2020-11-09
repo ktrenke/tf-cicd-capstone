@@ -1,14 +1,18 @@
-version: 0.2
+version: 0.1
 phases:
   install:
     commands:
-      - echo "install step"
+      - apt-get update
+      - apt-get install wget -y
+      - wget https://github.com/gohugoio/hugo/releases/download/v0.78.1/hugo_0.78.1_Linux-64bit.deb
+      - dpkg -i hugo_0.78.1_Linux-64bit.deb
   pre_build:
     commands:
-      - echo "pre_build step"
+      - rm -rf public/*
   build:
     commands:
-      - echo "build command"
+      - /usr/local/bin/hugo
+      - /usr/local/bin/hugo deploy
   post_build:
     commands:
       - echo "post_build step"
